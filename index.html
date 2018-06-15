@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Soft Shadows & Caustics</h1>
+        <p>Alexa Drenick</p>
+      </div>
+    </div>
+	<div class="shoft shadows">
+		<h1>Soft Shadows:</h1>
+		<p>I added functionality for parsing area lights in accordance with povray's documentation. An area light is specified by 2 perpendicular axes and the number of rows and columns of lights. When calculating whether a point was in shadow or not, I casted rays to each of the lights in the area light grid and then averaged the results. The more rows and columns, the less artifacts are present in the shadows. <p>
+		<img src="povray_area_light_code.png" style="width:415px;height:250px;">	
+		<img src="povray_area_light_img.png" style="width:319px;height:236px;">
+		<p> <br>Without soft shadows: <p>
+		<img src="val_no.png" style="width:640px;height:480px;">
+		<p> With soft shadows, rows = cols = 5: <p>
+		<img src="val_5.png" style="width:640px;height:480px;">
+		<p> With soft shadows, rows = cols = 15: <p>
+		<img src="val_15.png" style="width:640px;height:480px;">
+	<div>
+	<div class="caustics">
+		<h1><br>Caustics:</h1>
+		<p>I also implemented caustics using the simplified approach of just looking at the dot product between the vector from the light to a refractive surface and the normal of the surface. The effect is increased when the dot product is closer to 1 and decreased when it's closer to 0. I also increased the effect with respect to the index of refraction of the object.  </p>
+		<img src="caustics.png" style="width:192px;height:300px;">
+		<p> <br>Without caustics: <p>
+		<img src="woutcaustics.png" style="width:640px;height:480px;">
+		<p> With caustics: <p>
+		<img src="wcaustics.png" style="width:640px;height:480px;">
+		
+		
+	</div>
+	<div class="both">
+		<h1>Both Soft Shadows and Caustics:</h1>
+		<p>I played around with implementing both effects in different scenarios, such as colored lights and overlapping shadows. Top left is normal, top right is just caustics, bottom left is just soft shadows, and bottom right is both soft shadows and caustics.</p>
+		<img src="all_three.png" style="width:1200px;height:845px;">
+		<p><br><p>
+		<img src="all_coloredlights.png" style="width:1200px;height:845px;">
+		<p><br><p>
+		<img src="all_overlap.png" style="width:1200px;height:845px;">
+
+		
+		</div>
+	<div class="sources">
+		<h1>Sources:</h1>
+		<p>Area Lights: </p><a href="http://www.povray.org/documentation/view/3.6.0/313/">POV-Ray Documentation </a>
+		<p><br />Caustics: </p><a href="http://research.nvidia.com/sites/default/files/pubs/2016-02_A-Phenomenological-Scattering/McGuire2016Transparency.pdf">A Phenomenological Scattering Model for Order-Independent Transparency<br><br></a>
+	</div>
+    
+    
+  </body>
+</html>
