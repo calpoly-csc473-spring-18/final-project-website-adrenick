@@ -27,7 +27,7 @@
 		<img src="val_5.png" style="width:640px;height:480px;">
 		<p> With soft shadows, rows = cols = 15: <p>
 		<img src="val_15.png" style="width:640px;height:480px;">
-	<div>
+	</div>
 	<div class="caustics">
 		<h1><br>Caustics:</h1>
 		<p>I also implemented caustics using the simplified approach of just looking at the dot product between the vector from the light to a refractive surface and the normal of the surface. The effect is increased when the dot product is closer to 1 and decreased when it's closer to 0. I also increased the effect with respect to the index of refraction of the object.  </p>
@@ -50,6 +50,12 @@
 		<p><br><p>
 		<img src="all_overlapspheres.png" style="width:1200px;height:845px;">
 		</div>
+
+	<div class="Software Design">
+		<h1> Software Design: </h1>
+		<p> Before implementing my final project, I refactored the parser and computeColor method to make adding new code more straightforward. Then with the new functionality, I added each piece of functionality seperately and tested them individualy before moving on, which actually made soft shadows and caustics come together more painlessly than the other effects earlier in the quarter. At the beginning of the quarter, I wasn't very experienced with Object Oriented programming, but after writing the rest of the raytracer, I was able to make the new aspects of the raytracer more object oriented, which I think simplifies the code. For example, the sampling method for area lights is in the Light class. If I would have written that function at the beginning of the quarter, it would have just been crammed into whatever function was using it. Overall, I like the way my caustics and soft shadows ended up and enjoyed how much I learned about c++ and raytracing. <p>
+
+	</div>
 	<div class="sources">
 		<h1>Sources:</h1>
 		<p>Area Lights: </p><a href="http://www.povray.org/documentation/view/3.6.0/313/">POV-Ray Documentation </a>
